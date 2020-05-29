@@ -2,6 +2,6 @@
 
 
 
-#Full stack web
+#just a bit of backend
 
 Happy Reading
