@@ -32,13 +32,9 @@ def loginusr(request):
         email1=request.POST.get('email1')
         print(password1,email1)
 
-        if Register.objects.filter(email=email1).exists():
-            if Register.objects.filter(password=password1).exists():
+        if Register.objects.filter(email=email1,password=password1).exists():
                 messages.info(request,"Hello Welcome to Our website")
                 return render(request,"index.html")
-            else:
-                messages.info(request,"Password are not matching !")
-                return redirect("/register")    
         else:
             messages.info(request,"invalid credentials Register yourself (:")    
             return redirect("/register")
